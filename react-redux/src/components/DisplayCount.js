@@ -1,10 +1,13 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 
 const DisplayCount = () => {
   return (
-    <div>
-      
-    </div>
+   <Card>
+    <Card.Body>
+      <h4>Number of Todos : 46</h4>
+    </Card.Body>
+   </Card>
   )
 }
 

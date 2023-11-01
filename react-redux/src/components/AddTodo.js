@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Form, Card, Container, Row, Col, Button } from "react-bootstrap";
+import DisplayCount from './DisplayCount';
+
 
 const AddTodo = () => {
   const[todo, setTodo] = useState({
@@ -10,6 +12,10 @@ const AddTodo = () => {
   const handleSubmit = (e)=>{
     e.preventDefault();
     console.log("todo =>",todo)
+    setTodo({
+      title : '',
+      description : ""
+    })
   }
 
 //   const handleInputChange = (e)=>{
@@ -24,6 +30,7 @@ const AddTodo = () => {
           <Card className="shadow-sm">
             <Card.Body>
               <h3>Add Todo here !!</h3>
+              <DisplayCount/>
               {/* Form */}
               <Form  onSubmit={handleSubmit}>
                 {/* title */}
