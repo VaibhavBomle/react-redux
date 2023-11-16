@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Form, Card, Container, Row, Col, Button } from "react-bootstrap";
 import DisplayCount from './DisplayCount';
+import {addTodo} from '../redux/action/todo'
 
 
-const AddTodo = () => {
+const AddTodo = ({addTodo}) => {
   const[todo, setTodo] = useState({
     title: "",
     description: "",
@@ -11,6 +12,7 @@ const AddTodo = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
+    addTodo(todo)
     console.log("todo =>",todo)
     setTodo({
       title : '',
@@ -70,5 +72,12 @@ const AddTodo = () => {
     </Container>
   );
 };
+
+
+const mapStateToProps=(store) =>({})
+
+const mapDispatchToProps=(dispatch) =>({
+    addTodo :(todo)=(dispatch(addTodo(todo)))
+})
 
 export default AddTodo;
