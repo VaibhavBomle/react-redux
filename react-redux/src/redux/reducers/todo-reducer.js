@@ -7,6 +7,7 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
             // Add todo
+            console.log("Adding Todo...")
             return [...state, action.payload];
         case DELETE_TODO:
             // Delete todo

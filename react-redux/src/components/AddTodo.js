@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Card, Container, Row, Col, Button } from "react-bootstrap";
 import DisplayCount from './DisplayCount';
 import {addTodo} from '../redux/action/todo'
+import { connect } from "react-redux";
 
 
 const AddTodo = ({addTodo}) => {
@@ -77,7 +78,7 @@ const AddTodo = ({addTodo}) => {
 const mapStateToProps=(store) =>({})
 
 const mapDispatchToProps=(dispatch) =>({
-    addTodo :(todo)=(dispatch(addTodo(todo)))
+    addTodo :(todo)=>(dispatch(addTodo(todo)))
 })
 
-export default AddTodo;
+export default connect(mapStateToProps,mapDispatchToProps) (AddTodo);
