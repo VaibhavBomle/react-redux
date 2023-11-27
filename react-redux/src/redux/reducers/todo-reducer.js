@@ -7,7 +7,6 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
             // Add todo
-            console.log("Adding Todo...")
             return [...state, action.payload];
         case DELETE_TODO:
             // Delete todo
@@ -16,7 +15,7 @@ export default (state = initialState, action) => {
         case UPDATE_TODO:
             // Update todo
             const updatedState = state.map(todo => {
-                if (todo.id == action.payload.todoId) {
+                if (todo.id === action.payload.todoId) {
                     todo.title = action.payload.title
                     todo.description = action.payload.description
                     return todo;
